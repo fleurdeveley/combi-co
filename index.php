@@ -1,3 +1,30 @@
+<?php
+    $bdd = new PDO ('mysql:host=localhost;dbname=combis', 'root', '');
+
+    $query = $bdd->prepare('
+        SELECT * FROM renter
+        JOIN address ON renter.address_id = address.id
+        WHERE renter.id = 1
+    ');
+    $query->execute();
+    $renter = $query->fetch();
+    // echo'<pre>';
+    // print_r($renter);
+    // echo'</pre>';
+
+    $query = $bdd->prepare('
+        SELECT * FROM model
+        JOIN version ON model.version_id = version.id
+        LIMIT 2
+    ');
+    $query->execute();
+    $models = $query->fetchAll(PDO::FETCH_ASSOC);
+    // echo'<pre>';
+    // print_r($models);
+    // echo'</pre>';
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +67,7 @@
                 <img src="https://via.placeholder.com/200x200" class="img-fluid" alt="logo site">
             </div>
             <div class="col-xs-12 col-md-8 text-center">
-                <div class="p-5"><h1>COMBI & CO</h1></div>
+                <div class="p-5"><h1>COMBIS & ROAD</h1></div>
             </div>
         </header>
 
@@ -49,40 +76,33 @@
                 <h3>Loueur du mois</h3>
             </div>
             <div class="col-xs-12 col-md-6">
-                <img src="https://via.placeholder.com/350x200" class="rounded mx-auto d-block" alt="photo loueur français">
+                <img src="<?php echo $renter['picture'] ?>" class="rounded mx-auto d-block" alt="photo loueur français">
             </div>
             <div class="col-xs-12 col-md-6 p-3">
-                <div>Nom</div>
-                <div>Adresse</div>
-                <div>Code postal / Ville</div>
-                <div>Téléphone</div>
-                <div>Site</div>
-                <div>Présentation</div>
+                <div><?= ucfirst($renter['name']) ?></div>
+                <div><?php echo $renter['address'] ?></div>
+                <div><?php echo $renter['zipcode'].' '.ucfirst($renter['city']) ?></div>
+                <div><?php echo $renter['phone'] ?></div>
+                <div><?php echo $renter['website'] ?></div>
+                <div><?php echo $renter['description'] ?></div>
             </div>
         </section>
 
         <section class="row p-2">
             <div class="col-xs-12 col-md-12">
-                <h3>Zoom sur les combi...</h3>
+                <h3>Zoom sur les combis...</h3>
             </div>
 
+            <?php foreach ($models AS $model): ?>
             <div class="col-xs-12 col-md-6">
                 <div class="card p-2">
-                    <img src="https://via.placeholder.com/500x300" class="card-img-top-thumbnail" alt="...">
+                    <img src="<?php echo $model['picture'] ?>" class="card-img-top-thumbnail" alt="...">
                     <div class="card-body text-center">
-                      <p class="card-text">T1 SPLIT </br> 1950 à 1967</p>
+                    <p class="card-text"><?php echo $model['model'].' '.$model['nickname'].' '.$model['name'];?> </br> <?php echo $model['year_start'].' à '.$model['year_end'];?></p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-md-6">
-                <div class="card p-2">
-                    <img src="https://via.placeholder.com/500x300" class="card-img-top-thumbnail" alt="...">
-                    <div class="card-body text-center">
-                    <p class="card-text">T2 BAY WINDOWS </br> 1950 à 1967</p>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach ?>
         </section>
 
         <footer class="row p-2">
