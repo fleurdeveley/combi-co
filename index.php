@@ -1,5 +1,5 @@
 <?php
-    $bdd = new PDO ('mysql:host=localhost;dbname=combis', 'root', '');
+    $bdd = new PDO ('mysql:host=localhost;dbname=combis', 'root', '', [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8']);
 
     $query = $bdd->prepare('
         SELECT * FROM renter
