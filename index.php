@@ -1,34 +1,5 @@
 <?php
-    try{
-        $bdd = new PDO ('mysql:host=localhost;dbname=combis', 'root', '', [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    
-        $query = $bdd->prepare('
-            SELECT * FROM renter
-            JOIN address ON renter.address_id = address.id
-            WHERE renter.id = 1
-        ');
-        $query->execute();
-        $renter = $query->fetch();
-        // echo'<pre>';
-        // print_r($renter);
-        // echo'</pre>';
-
-        $query = $bdd->prepare('
-            SELECT * FROM model
-            JOIN version ON model.version_id = version.id
-            LIMIT 2
-        ');
-        $query->execute();
-        $models = $query->fetchAll(PDO::FETCH_ASSOC);
-        // echo'<pre>';
-        // print_r($models);
-        // echo'</pre>';
-        $bdd = null;
-    } catch (PDOException $e) {
-        echo 'Erreur: '.$e->getMessage().'<br/';
-        die();
-    }
- 
+    require_once ("bdd.php");
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +75,9 @@
                 <div class="card p-2">
                     <img src="<?php echo $model['picture'] ?>" class="card-img-top-thumbnail" alt="...">
                     <div class="card-body text-center">
-                    <p class="card-text"><?php echo $model['model'].' '.$model['nickname'].' '.$model['name'];?> </br> <?php echo $model['year_start'].' à '.$model['year_end'];?></p>
+                    <div><?php echo $model['model'].' '.$model['nickname'];?></div>
+                    <div><?php echo $model['name'];?></div>
+                    <div><?php echo $model['year_start'].' à '.$model['year_end'];?></div>
                     </div>
                 </div>
             </div>
