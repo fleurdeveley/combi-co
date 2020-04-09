@@ -1,7 +1,15 @@
 <?php
-require('modele.php');
+require('controller/frontend.php');
 
-$renter = getRenter();
-$models = getModels();
 
-require('affichageAccueil.php');
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'home') {
+        home();
+    } elseif ($_GET['action'] == 'renters') {
+       renters();
+    } elseif ($_GET['action'] == 'models') {
+        models();
+    } 
+}else {
+    home();
+}
