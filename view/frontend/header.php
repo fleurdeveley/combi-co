@@ -1,6 +1,6 @@
-<header class="row p-2">
+<header class="row bg-primary p-2">
     <div class="col-12">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(247, 247, 183);">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -18,7 +18,7 @@
                 </ul>
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
         </nav>

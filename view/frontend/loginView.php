@@ -2,7 +2,34 @@
 
 <?php ob_start(); ?>
 
-<h1>Mon administrateur !</h1>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card border-dark my-3">
+            <div class="card-header bg-primary text-white text-center ">
+                Connexion à l'administrateur
+            </div>
+            <div class="card-body">
+                <form method="post" action="" id="login">
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-secondary text-white"><i class="fas fa-at"></i></div>
+                        </div>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-secondary text-white"><i class="fas fa-unlock-alt"></i></div>
+                        </div>
+                        <input type="password" class="form-control" id="password" placeholder="Mot de Passe">
+                    </div>
+                    <div class=text-center>
+                        <button type="submit" class="btn btn-secondary">me connecter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php $content = ob_get_clean(); ?>
 

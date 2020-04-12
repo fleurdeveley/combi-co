@@ -1,9 +1,9 @@
-<footer class="row p-2">
+<footer class="row bg-primary p-2">
     <div class="col-xs-12 col-lg-4 text-center">
         <div class="mb-1">Inscription newsletter</div>
         <form class="form-inline">
             <input class="form-control" type="search" placeholder="Email" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"><i class="far fa-envelope fa-lg"></i></button>
+            <button class="btn btn-outline-dark" type="submit"><i class="far fa-envelope fa-lg"></i></button>
         </form>
     </div>
     <div class="col-xs-12 col-lg-4 text-center">
