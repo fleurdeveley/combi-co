@@ -1,12 +1,12 @@
-header, footer{
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+header, footer, nav{
     border: 2px solid red;
     background-color: rgb(247, 247, 183);
 }
 
 section{
     border: 2px solid green;
-}
-
-nav{
-    background-color: rgb(247, 247, 183);
 }
