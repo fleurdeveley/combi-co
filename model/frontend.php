@@ -1,4 +1,5 @@
 <?php
+
 function getRenter() {
     $bdd = bddConnect();
     $query = $bdd->prepare('
@@ -33,9 +34,9 @@ function getRenters() {
 function getModels() {
     $bdd = bddConnect();
     $query = $bdd->prepare('
-        SELECT * FROM models
-        JOIN versions ON models.version_id = versions.id
-        ORDER BY RAND () LIMIT 2
+        SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
+        LEFT JOIN versions ON models.version_id = versions.id
+        ORDER BY model
     ');
     $query->execute();
     $models = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -47,9 +48,24 @@ function getModels() {
     return $models;
 }
 
+function getModel($modelId) {
+    $bdd = bddConnect();
+    $query = $bdd->prepare('
+    SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
+    LEFT JOIN versions ON models.version_id = versions.id
+    WHERE models.id = ?
+    ');
+    $query->execute([$modelId]);
+    $model = $query->fetch();
+    $query->closeCursor();
+    return $model;
+}
+
+
 function bddConnect() {
+    require('config.php');
     try{
-        $bdd = new PDO ('mysql:host=localhost;dbname=combis', 'root', '', [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        $bdd = new PDO ("mysql:host=".$host.";dbname=".$dbName, $userBdd, $passBdd, $optionBdd);
         return $bdd;
     } catch (Exception $e) {
         die('Erreur: '.$e->getMessage());
