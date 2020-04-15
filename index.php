@@ -15,7 +15,11 @@ if (isset($_GET['action'])) {
             echo 'Erreur';
         }
     } elseif ($_GET['action'] == 'login') {
-        login();
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            checkLogin();
+        } else {
+            login();
+        }
     }
 }else {
     home();

@@ -61,6 +61,17 @@ function getModel($modelId) {
     return $model;
 }
 
+function getUser() {
+    $bdd = bddConnect();
+    $query = $bdd->prepare("
+    SELECT email FROM user
+    WHERE email =" .$_POST['email'] "AND password =" .$_POST['password']
+    );
+    $query->execute();
+    $user = $query->fetch();
+    $query->closeCursor();
+    return $user;
+}
 
 function bddConnect() {
     require('config.php');
