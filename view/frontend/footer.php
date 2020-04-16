@@ -11,9 +11,9 @@
     </div>
     <div class="col-xs-12 col-lg-4 text-center p-3">
         <ul class="list-inline">
-            <li class="list-inline-item">Accueil</li>|
-            <li class="list-inline-item">Modèles</li>|
-            <li class="list-inline-item">Loueurs</li>
+            <li class="list-inline-item" href="indexView.php">Accueil</li>|
+            <li class="list-inline-item" href="modelsView.php">Modèles</li>|
+            <li class="list-inline-item" href="rentersView.php">Loueurs</li>
         </ul>
     </div>
     <div class="col-12 text-center">

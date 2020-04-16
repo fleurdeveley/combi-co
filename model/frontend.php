@@ -1,6 +1,6 @@
 <?php
 
-function getRenter() {
+function getRandRenter() {
     $bdd = bddConnect();
     $query = $bdd->prepare('
     SELECT * FROM renters
@@ -16,14 +16,30 @@ function getRenter() {
     return $renter;
 }
 
+function getRenter($renterId) {
+    $bdd = bddConnect();
+    $query = $bdd->prepare('
+    SELECT renters.id, address, zipcode, city, name, website, phone, picture, description FROM renters
+    JOIN address ON renters.address_id = address.id
+    WHERE renters.id = ?
+    ');
+    $query->execute([$renterId]);
+    $renter = $query->fetch();
+    $query->closeCursor();
+    // echo'<pre>';
+    // print_r($renter);
+    // echo'</pre>';
+    return $renter;
+}
+
 function getRenters() {
     $bdd = bddConnect();
     $query = $bdd->prepare('
-    SELECT * FROM renters
+    SELECT renters.id, address, zipcode, city, name, website, phone, picture, description FROM renters
     JOIN address ON renters.address_id = address.id
     ');
     $query->execute();
-    $renters = $query->fetch();
+    $renters = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
     // echo'<pre>';
     // print_r($renter);
@@ -65,7 +81,7 @@ function getUser() {
     $bdd = bddConnect();
     $query = $bdd->prepare("
     SELECT email FROM user
-    WHERE email =" .$_POST['email'] "AND password =" .$_POST['password']
+    WHERE email =" .$_POST['email'] . "AND password =" .$_POST['password']
     );
     $query->execute();
     $user = $query->fetch();

@@ -1,8 +1,9 @@
 <?php
-require('model/frontend.php');
+
+require_once('model/frontend.php');
 
 function home() {
-    $renter = getRenter();
+    $renter = getRandRenter();
     $models = getModels();
     shuffle($models);
     $models = array_slice($models, 0, 2);
