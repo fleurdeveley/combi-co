@@ -24,9 +24,7 @@ if (isset($_GET['action'])) {
     } elseif($_GET['action'] == 'addrenter') {
         addRenter(); 
     } elseif($_GET['action'] == 'editrenter') {
-        editRenter(); 
-    } elseif($_GET['action'] == 'deleterenter') {
-        deleteRenter();    
+        editRenter();  
     } elseif($_GET['action'] == 'listrenters') {
         listRenters();
     } elseif ($_GET['action'] == 'readrenter') {

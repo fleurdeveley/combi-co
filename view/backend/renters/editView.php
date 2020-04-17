@@ -10,53 +10,53 @@
         <form>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Nom</label>
-                    <input type="name" class="form-control" id="exampleFormControlInput1" name="name">
+                    <label for="name">Nom</label>
+                    <input type="name" class="form-control" id="name" name="name" value="<?= $renter['name']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Adresse</label>
-                    <input type="address" class="form-control" id="exampleFormControlInput1" name="address">
+                    <label for="adress">Adresse</label>
+                    <input type="address" class="form-control" id="address" name="address" value="<?= $renter['address']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Code postal</label>
-                    <input type="zipcode" class="form-control" id="exampleFormControlInput1" name="zipcode">
+                    <label for="zipcode">Code postal</label>
+                    <input type="zipcode" class="form-control" id="zicope" name="zipcode" value="<?= $renter['zipcode']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Ville</label>
-                    <input type="city" class="form-control" id="exampleFormControlInput1" name="city">
+                    <label for="city">Ville</label>
+                    <input type="city" class="form-control" id="city" name="city" value="<?= $renter['city']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Téléphone</label>
-                    <input type="phone" class="form-control" id="exampleFormControlInput1" name="phone">
+                    <label for="phone">Téléphone</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" value="<?= $renter['phone']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Site</label>
-                    <input type="website" class="form-control" id="exampleFormControlInput1" name="website">
+                    <label for="website">Site</label>
+                    <input type="website" class="form-control" id="website" name="website" value="<?= $renter['website']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlInput1">Logo</label>
-                    <input type="picture" class="form-control" id="exampleFormControlInput1" name="picture">
+                    <label for="picture">Logo</label>
+                    <input type="picture" class="form-control" id="picture" name="picture" value="<?= $renter['picture']; ?>">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
-                    <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"><?= $renter['description']; ?></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">enregistrer</button> <button type="submit" class="btn btn-danger">annuler</button>
+            <a href="index.php?action=listrenters&id=<?= $renter['id'] ?>" class="btn btn-danger">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
         </form>
     </div>
 

@@ -17,7 +17,7 @@
                     </li>
                 </ul>
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>

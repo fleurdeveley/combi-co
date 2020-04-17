@@ -5,11 +5,8 @@ function addRenter() {
     require('view/backend/renters/addView.php');
 }
 
-function deleteRenter() {
-    $renters = getRenters();
-}
-
 function editRenter() {
+    $renter = getRenter($_GET['id']);
     require('view/backend/renters/editView.php');
 }
 
