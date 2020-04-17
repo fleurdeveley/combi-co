@@ -26,9 +26,6 @@ function getRenter($renterId) {
     $query->execute([$renterId]);
     $renter = $query->fetch();
     $query->closeCursor();
-    // echo'<pre>';
-    // print_r($renter);
-    // echo'</pre>';
     return $renter;
 }
 
@@ -41,9 +38,6 @@ function getRenters() {
     $query->execute();
     $renters = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
-    // echo'<pre>';
-    // print_r($renter);
-    // echo'</pre>';
     return $renters;
 }
 
@@ -57,10 +51,6 @@ function getModels() {
     $query->execute();
     $models = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
-    // echo'<pre>';
-    // print_r($models);
-    // echo'</pre>';
-    // $bdd = null;
     return $models;
 }
 

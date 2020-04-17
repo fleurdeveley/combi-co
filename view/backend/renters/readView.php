@@ -4,20 +4,19 @@
 
 <div class='row my-3'>
 
-    <div class="col-md-12 text-justify">
-        <a href="index.php?action=listrenters" class="btn btn-success mb-2">Liste des loueurs</a>
+    <h3>Afficher un loueur</h3>
 
-        <h3>Afficher un loueur</h3>
-
+    <div class="col-md-10 offset-md-1 mt-3 text-justify lh-2">
         <div>id : <?= $renter['id']; ?></div>
         <div>nom : <?= $renter['name']; ?></div>
         <div>adresse : <?= $renter['address']; ?></div>
         <div>code postal : <?= $renter['zipcode']; ?></div>
         <div>ville : <?= $renter['city']; ?></div>
-        <div>site : <?= $renter['website']; ?></div>
         <div>telephone : <?= $renter['phone']; ?></div>
+        <div>site : <?= $renter['website']; ?></div>
         <div>logo : <?= $renter['picture']; ?></div>
         <div>description : <?= $renter['description']; ?></div>
+        <a href="index.php?action=listrenters" class="btn btn-success mb-2">Liste des loueurs</a>
     </div>
 
 </div>

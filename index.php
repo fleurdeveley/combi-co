@@ -21,10 +21,14 @@ if (isset($_GET['action'])) {
         } else {
             login();
         }
-    } elseif($_GET['action'] == 'listrenters') {
-        listRenters();
     } elseif($_GET['action'] == 'addrenter') {
         addRenter(); 
+    } elseif($_GET['action'] == 'editrenter') {
+        editRenter(); 
+    } elseif($_GET['action'] == 'deleterenter') {
+        deleteRenter();    
+    } elseif($_GET['action'] == 'listrenters') {
+        listRenters();
     } elseif ($_GET['action'] == 'readrenter') {
         if(isset($_GET['id']) && $_GET['id'] > 0) {
             readRenter();
