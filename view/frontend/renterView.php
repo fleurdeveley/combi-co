@@ -13,9 +13,9 @@
                 <p class="card-text text-center"><?= $renter['address'] ?></p>
                 <p class="card-text text-center"><?= $renter['zipcode'] . ' ' . $renter['city'] ?></p>
                 <p class="card-text text-center"><?= $renter['phone'] ?></p> </br>
-                <p class="card-text text-center"><?= $renter['website'] ?></p> </br>
+                <p class="card-text text-center"> <a href="<?= $renter['website'] ?>" target="_blank"><?= $renter['website'] ?> </a></p></br>
                 <p class="card-text text-justify"><?= $renter['description'] ?></p>
-                <h6>Modèles disponibles :</h6>
+                <h5>Modèles disponibles :</h5>
                 <ul>
                     <?php foreach ($renterModels as $renterModel) : ?>
                         <li class="card-text text-justify"><?= $renterModel['model'] .' '. $renterModel['nickname'] .' '. $renterModel['name'] ?></li>

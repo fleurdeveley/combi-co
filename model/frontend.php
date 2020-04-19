@@ -95,7 +95,7 @@ function getRenterModels($renterId) {
 function getModelRenters($modelId) {
     $bdd = bddConnect();
     $query = $bdd->prepare('
-    SELECT name, website, address, zipcode, city FROM renters_models
+    SELECT renters.id, name, website, address, zipcode, city FROM renters_models
     JOIN renters ON renters_models.renter_id = renters.id
     JOIN address ON renters.address_id = address.id
     WHERE model_id = ?
