@@ -16,7 +16,7 @@
         <div>site : <?= $renter['website']; ?></div>
         <div>logo : <?= $renter['picture']; ?></div>
         <div>description : <?= $renter['description']; ?></div>
-        <a href="index.php?action=listrenters" class="btn btn-success mb-2">Liste des loueurs</a>
+        <a href="index.php?action=listrenters&id=<?= $renter['id'] ?>" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
     </div>
 
 </div>

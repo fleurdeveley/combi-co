@@ -3,7 +3,8 @@
 <?php ob_start(); ?>
 
 <div class='row my-3'>
-    <a href="index.php?action=addrenter" class="btn btn-success">Ajouter un loueur</a>
+    <a href="index.php?action=addrenter" class="btn btn-success mr-3">Ajouter un loueur</a> <a href="index.php?action=home" class="btn btn-danger">Déconnexion</a>
+
 
     <div class="table-responsive">
         <table class="table table-hover table-bodered">

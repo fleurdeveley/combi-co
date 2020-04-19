@@ -7,13 +7,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="indexView.php">Accueil<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php?action=home">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="modelsView.php">Modèles</a>
+                        <a class="nav-link" href="index.php?action=models">Modèles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="rentersView.php">Loueurs</a>
+                        <a class="nav-link" href="index.php?action=renters">Loueurs</a>
                     </li>
                 </ul>
                 <form class="form-inline">

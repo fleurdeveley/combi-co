@@ -2,6 +2,14 @@
 
 require_once('model/frontend.php');
 
+function checkLogin() {
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        echo "ok";
+    }else {
+        echo "entrer un mail valide";
+    }
+}
+
 function home() {
     $renter = getRandRenter();
     $models = getModels();
@@ -10,29 +18,28 @@ function home() {
     require('view/frontend/indexView.php');
 }
 
+function login() {
+    require('view/frontend/loginView.php');
+}
+
+function model() {
+    $model = getModel($_GET['id']);
+    $modelRenters = getModelRenters($_GET['id']);
+    require('view/frontend/modelView.php');
+}
+
 function models() {
     $models = getModels();
     require('view/frontend/modelsView.php'); 
 }
 
-function model() {
-    $model = getModel($_GET['id']);
-    require('view/frontend/modelView.php');
+function renter() {
+    $renter = getRenter($_GET['id']);
+    $renterModels = getRenterModels($_GET['id']);
+    require('view/frontend/renterView.php');    
 }
 
 function renters() {
     $renters = getRenters();
     require('view/frontend/rentersView.php');    
-}
-
-function login() {
-    require('view/frontend/loginView.php');
-}
-
-function checkLogin() {
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        echo "ok";
-    }else {
-        echo "entrer un mail valide";
-    }
 }

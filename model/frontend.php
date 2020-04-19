@@ -1,5 +1,41 @@
 <?php
 
+function bddConnect() {
+    require('config.php');
+    try{
+        $bdd = new PDO ("mysql:host=".$host.";dbname=".$dbName, $userBdd, $passBdd, $optionBdd);
+        return $bdd;
+    } catch (Exception $e) {
+        die('Erreur: '.$e->getMessage());
+    }
+}
+
+function getModel($modelId) {
+    $bdd = bddConnect();
+    $query = $bdd->prepare('
+    SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
+    LEFT JOIN versions ON models.version_id = versions.id
+    WHERE models.id = ?
+    ');
+    $query->execute([$modelId]);
+    $model = $query->fetch();
+    $query->closeCursor();
+    return $model;
+}
+
+function getModels() {
+    $bdd = bddConnect();
+    $query = $bdd->prepare('
+        SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
+        LEFT JOIN versions ON models.version_id = versions.id
+        ORDER BY model
+    ');
+    $query->execute();
+    $models = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $models;
+}
+
 function getRandRenter() {
     $bdd = bddConnect();
     $query = $bdd->prepare('
@@ -41,30 +77,33 @@ function getRenters() {
     return $renters;
 }
 
-function getModels() {
+function getRenterModels($renterId) {
     $bdd = bddConnect();
     $query = $bdd->prepare('
-        SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
-        LEFT JOIN versions ON models.version_id = versions.id
-        ORDER BY model
+    SELECT model, nickname, name FROM renters_models
+    JOIN models ON renters_models.model_id=models.id
+    JOIN versions ON models.version_id=versions.id
+    WHERE renter_id = ?
+    ORDER BY model
     ');
-    $query->execute();
-    $models = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->execute([$renterId]);
+    $renterModels = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
-    return $models;
+    return $renterModels;
 }
 
-function getModel($modelId) {
+function getModelRenters($modelId) {
     $bdd = bddConnect();
     $query = $bdd->prepare('
-    SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
-    LEFT JOIN versions ON models.version_id = versions.id
-    WHERE models.id = ?
+    SELECT name, website, address, zipcode, city FROM renters_models
+    JOIN renters ON renters_models.renter_id = renters.id
+    JOIN address ON renters.address_id = address.id
+    WHERE model_id = ?
     ');
     $query->execute([$modelId]);
-    $model = $query->fetch();
+    $modelRenters = $query->fetchAll(PDO::FETCH_ASSOC);
     $query->closeCursor();
-    return $model;
+    return $modelRenters;
 }
 
 function getUser() {
@@ -77,14 +116,4 @@ function getUser() {
     $user = $query->fetch();
     $query->closeCursor();
     return $user;
-}
-
-function bddConnect() {
-    require('config.php');
-    try{
-        $bdd = new PDO ("mysql:host=".$host.";dbname=".$dbName, $userBdd, $passBdd, $optionBdd);
-        return $bdd;
-    } catch (Exception $e) {
-        die('Erreur: '.$e->getMessage());
-    }
 }

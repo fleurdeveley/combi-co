@@ -2,6 +2,7 @@
 require_once('model/frontend.php');
 
 function addRenter() {
+    $renter = getRenter($_GET['id']);
     require('view/backend/renters/addView.php');
 }
 

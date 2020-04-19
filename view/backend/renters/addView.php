@@ -56,7 +56,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
-            <a href="index.php?action=listrenters&id=<?= $renter['id'] ?>" class="btn btn-danger">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
+            <a href="index.php?action=listrenters&id=<?= $renter['id'] ?>" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
         </form>
     </div>
 
