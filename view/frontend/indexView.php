@@ -2,14 +2,14 @@
 
 <?php ob_start(); ?>
 
-<section class="row p-2">
+<section class="row my-4 p-2">
     <div class="col-12">
-        <h3>Loueur du mois</h3>
+        <h3>Loueur du moment</h3>
     </div>
     <div class="col-xs-12 col-md-6">
         <img src="<?= $renter['picture'] ?>" class="rounded mx-auto d-block" alt="photo loueur français">
     </div>
-    <div class="col-xs-12 col-md-6 p-1">
+    <div class="col-xs-12 col-md-6 p-1 text-justify">
         <div><?= ucfirst($renter['name']) ?></div>
         <div><?= $renter['address'] ?></div>
         <div><?= $renter['zipcode'] . ' ' . ucfirst($renter['city']) ?></div>
@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<section class="row p-2">
+<section class="row my-4 p-2">
     <div class="col-xs-12 col-md-12">
         <h3>Zoom sur les combis...</h3>
     </div>
