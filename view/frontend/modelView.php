@@ -24,7 +24,7 @@
                 <div class='col-12 my-3'>
                     <div class="card border-dark">
                         <div class=" card-header bg-primary text-white">
-                            <?= $modelRenter['name'] ?>
+                            <h5><?= $modelRenter['name'] ?></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text text-center"><?= $modelRenter['address'] ?></p>

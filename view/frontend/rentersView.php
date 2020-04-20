@@ -10,7 +10,7 @@
         <div class='col-4'>
             <div class="card mb-5 border-dark">
                 <div class=" card-header bg-primary text-white">
-                    <?= $renter['name'] ?>
+                    <h5><?= $renter['name'] ?></h5>
                 </div>
                 <img src="<?= $renter['picture'] ?>" class="card-img-top" alt="...">
                 <div class="card-body">

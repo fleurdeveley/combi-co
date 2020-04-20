@@ -4,9 +4,15 @@ require_once('model/frontend.php');
 
 function checkLogin() {
     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        echo "ok";
+        $user = getUser($_POST['email']);
+        if($_POST['email'] == $user['email'] && $_POST['password'] == $user['password']) {
+            header('Location: index.php?action=listrenters');
+            exit;
+        }else{
+            require('view/frontend/loginView.php');
+        }
     }else {
-        echo "entrer un mail valide";
+        require('view/frontend/loginView.php');
     }
 }
 

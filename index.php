@@ -27,9 +27,6 @@ if (isset($_GET['action'])) {
         } else {
             renters();
         }
-    } else {
-        home();
-    }
     } elseif ($_GET['action'] == 'addrenter') {
         addRenter();
     } elseif($_GET['action'] == 'editrenter') {
@@ -39,7 +36,10 @@ if (isset($_GET['action'])) {
     } elseif ($_GET['action'] == 'readrenter') {
         if(isset($_GET['id']) && $_GET['id'] > 0) {
             readRenter();
+    } else {
+        home();
     }
 }else {
     home();
+}
 }

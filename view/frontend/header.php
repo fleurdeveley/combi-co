@@ -6,7 +6,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?action=home">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -15,11 +15,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=renters">Loueurs</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=login"><i class="fas fa-user-lock"></i></a>
+                    </li>
                 </ul>
-                <form class="form-inline">
-                    <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                </form>
             </div>
         </nav>
     </div>

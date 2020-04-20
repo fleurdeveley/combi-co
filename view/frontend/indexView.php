@@ -10,11 +10,11 @@
         <img src="<?= $renter['picture'] ?>" class="rounded mx-auto d-block" alt="photo loueur français">
     </div>
     <div class="col-xs-12 col-md-6 p-1 text-justify">
-        <div><?= ucfirst($renter['name']) ?></div>
+        <h5><?= ucfirst($renter['name']) ?></h5>
         <div><?= $renter['address'] ?></div>
         <div><?= $renter['zipcode'] . ' ' . ucfirst($renter['city']) ?></div>
         <div><?= $renter['phone'] ?></div>
-        <div><?= $renter['website'] ?></div>
+        <div><a href="<?= $renter['website'] ?>" target="_blank"><?= $renter['website'] ?> </a></div>
         <div><?= $renter['description'] ?></div>
     </div>
 </section>
@@ -29,8 +29,8 @@
             <div class="card border-dark m-1 p-1">
                 <img src="<?= $model['picture'] ?>" class="card-img-top-thumbnail" alt="...">
                 <div class="card-body text-center">
-                    <div><?= $model['model'] . ' ' . $model['nickname']; ?></div>
-                    <div><?= $model['name']; ?></div>
+                    <h5><?= $model['model'] . ' ' . $model['nickname']; ?></h5>
+                    <h6><?= $model['name']; ?></h6>
                     <div><?= $model['year_start'] . ' à ' . $model['year_end']; ?></div>
                 </div>
             </div>

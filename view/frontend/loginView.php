@@ -6,7 +6,7 @@
     <div class="col-md-6 offset-md-3">
         <div class="card border-dark my-3">
             <div class="card-header bg-primary text-white text-center ">
-                Connexion à l'administrateur
+                <h5>Connexion à l'administrateur</h5>
             </div>
             <div class="card-body">
                 <form method="post" action="index.php?action=login" id="login">

@@ -106,13 +106,13 @@ function getModelRenters($modelId) {
     return $modelRenters;
 }
 
-function getUser() {
+function getUser($userId) {
     $bdd = bddConnect();
-    $query = $bdd->prepare("
-    SELECT email FROM user
-    WHERE email =" .$_POST['email'] . "AND password =" .$_POST['password']
-    );
-    $query->execute();
+    $query = $bdd->prepare('
+    SELECT * FROM users
+    WHERE email = ?
+    ');
+    $query->execute([$userId]);
     $user = $query->fetch();
     $query->closeCursor();
     return $user;

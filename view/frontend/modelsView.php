@@ -10,7 +10,7 @@
         <div class='col-4'>
             <div class="card mb-5 border-dark">
                 <div class=" card-header bg-primary text-white">
-                    <?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?>
+                    <h5><?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?></h5>
                 </div>
                 <img src="<?= $model['picture'] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
