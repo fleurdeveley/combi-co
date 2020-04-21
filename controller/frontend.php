@@ -1,10 +1,17 @@
 <?php
 
-require_once('model/frontend.php');
+use \Combis\Model\ModelManager;
+use \Combis\Model\RenterManager;
+use \Combis\Model\UserManager;
+
+require_once('model/ModelManager.php');
+require_once('model/RenterManager.php');
+require_once('model/UserManager.php');
 
 function checkLogin() {
     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $user = getUser($_POST['email']);
+        $userManager = new UserManager();
+        $user = $userManager->getUser($_POST['email']);
         if($_POST['email'] == $user['email'] && $_POST['password'] == $user['password']) {
             header('Location: index.php?action=listrenters');
             exit;
@@ -17,8 +24,10 @@ function checkLogin() {
 }
 
 function home() {
-    $renter = getRandRenter();
-    $models = getModels();
+    $renterManager = new RenterManager();
+    $renter = $renterManager->getRandRenter();
+    $modelManager = new ModelManager();
+    $models = $modelManager->getModels();
     shuffle($models);
     $models = array_slice($models, 0, 2);
     require('view/frontend/indexView.php');
@@ -29,23 +38,27 @@ function login() {
 }
 
 function model() {
-    $model = getModel($_GET['id']);
-    $modelRenters = getModelRenters($_GET['id']);
+    $modelManager = new ModelManager();
+    $model = $modelManager->getModel($_GET['id']);
+    $modelRenters = $modelManager->getModelRenters($_GET['id']);
     require('view/frontend/modelView.php');
 }
 
 function models() {
-    $models = getModels();
+    $modelManager = new ModelManager();
+    $models = $modelManager->getModels();
     require('view/frontend/modelsView.php'); 
 }
 
 function renter() {
-    $renter = getRenter($_GET['id']);
-    $renterModels = getRenterModels($_GET['id']);
+    $renterManager = new RenterManager();
+    $renter = $renterManager->getRenter($_GET['id']);
+    $renterModels = $renterManager->getRenterModels($_GET['id']);
     require('view/frontend/renterView.php');    
 }
 
 function renters() {
-    $renters = getRenters();
+    $renterManager = new RenterManager();
+    $renters = $renterManager->getRenters();
     require('view/frontend/rentersView.php');    
 }
