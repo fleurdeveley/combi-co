@@ -5,3 +5,7 @@ body{
 section{
     box-shadow: 6px 6px 6px gray;
 }
+
+.bg-primary {
+    background-color: gray!important;
+}

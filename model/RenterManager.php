@@ -18,6 +18,18 @@ class RenterManager extends Manager {
         return $renter;
     }
 
+    public function insertRenter() {
+        $bdd = $this->bddConnect();
+        $query = $bdd->prepare('
+        INSERT INTO address (address.id, address, zipcode, city)
+        VALUES
+        ');
+        $query->execute();
+        $renter = $query->fetch();
+        $query->closeCursor();
+        return $renter;
+    }
+
     public function getRenter($renterId) {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('

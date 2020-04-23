@@ -9,9 +9,24 @@ require_once('model/RenterManager.php');
 class AdminRenterController {
     public function addRenter() {
         $renterManager = new RenterManager();
-        $renter = $renterManager->getRenter($_GET['id']);
         require('view/backend/renters/addView.php');
     }
+
+    public function insertRenter() {
+
+        
+    }
+
+    // méthode permettant de valider mes cases
+    // j'insere dans la bdd (INSERT)
+    // je renvoie vers la liste
+    // si les cases ne sont pas valide, je renvoie vers addrenter
+
+
+    // méthode permettant de valider mes cases
+    // je modifie dans la bdd (UPDATE)
+    // je renvoie vers la liste
+    // si les cases ne sont pas valides, je renvoie vers editrenter
 
     public function editRenter() {
         $renterManager = new RenterManager();

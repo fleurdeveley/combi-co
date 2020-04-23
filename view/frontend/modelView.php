@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class='row my-4 p-2'>
-    <div class='col-8'>
+    <div class='col-12-md col-md-8'>
         <div class="card box-shadows-6px-gray">
             <div class=" card-header bg-primary text-white">
                 <?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?>
@@ -17,7 +17,7 @@
 
 
     </div>
-    <div class="col-4">
+    <div class="col-sm-12 col-md-4">
     <h5>Loueurs ayant ce modèle :</h5>
 
         <?php foreach ($modelRenters as $modelRenter) : ?>

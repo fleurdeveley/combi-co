@@ -7,7 +7,7 @@
         <h3>Wikicombis</h3>
     </div>
     <?php foreach ($models as $model) : ?>
-        <div class='col-4'>
+        <div class='col-sm-12 col-md-4'>
             <div class="card mb-5 border-dark">
                 <div class=" card-header bg-primary text-white">
                     <h5><?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?></h5>
