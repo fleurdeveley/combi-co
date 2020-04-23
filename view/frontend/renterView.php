@@ -3,10 +3,10 @@
 <?php ob_start(); ?>
 
 <div class='row my-4 p-2'>
-    <div class='col-6 offset-3'>
+    <div class='col-sm-12 col-md-8 offset-md-2'>
         <div class="card box-shadows-6px-gray">
             <div class=" card-header bg-primary text-white">
-                <?= $renter['name'] ?>
+                <h5><?= $renter['name'] ?></h5>
             </div>
             <img src="<?= $renter['picture'] ?>" class="card-img-top" alt="...">
             <div class="card-body">

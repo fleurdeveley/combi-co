@@ -7,7 +7,7 @@
 
     <div class="col-md-8 offset-md-3 my-3 text-justify">
 
-        <form>
+        <form method="post" action="index.php?action=addrenter" id="addrenter">
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Nom</label>
