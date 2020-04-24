@@ -59,7 +59,6 @@ if (isset($_GET['action'])) {
             }
         break;
 
-        // si chaque case est bien rempli, j'ajoute la méthode .... pour insérer un loueur
         case 'addrenter' :
             if (isset($_POST) && !empty($_POST)){
                 $adminRenterController = new AdminRenterController();
@@ -70,9 +69,9 @@ if (isset($_GET['action'])) {
             }
         break;  
 
+        case 'editrenter' :
         // si chaque case sont bien remplis, modifies la méthode .... pour modifier un loueur
         // sinon je renvoie la méthode editrenter
-        case 'editrenter' :
             $adminRenterController = new AdminRenterController();
             $adminRenterController->editRenter();
         break;

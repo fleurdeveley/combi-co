@@ -24,15 +24,18 @@ class AdminRenterController {
         }
     }
 
-    // méthode permettant de valider mes cases
-    // je modifie dans la bdd (UPDATE)
-    // je renvoie vers la liste
-    // si les cases ne sont pas valides, je renvoie vers editrenter
-
     public function editRenter() {
         $renterManager = new RenterManager();
         $renter = $renterManager->getRenter($_GET['id']);
         require('view/backend/renters/editView.php');
+    }
+
+    public function updateRenter() {
+    // même chose qu'insertRenter
+    // méthode permettant de valider mes cases
+    // je modifie dans la bdd (UPDATE)
+    // je renvoie vers la liste
+    // si les cases ne sont pas valides, je renvoie vers editrenter
     }
 
     public function listRenters() {
