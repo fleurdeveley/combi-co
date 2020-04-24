@@ -20,14 +20,20 @@ class RenterManager extends Manager {
 
     public function insertRenter() {
         $bdd = $this->bddConnect();
+
         $query = $bdd->prepare('
-        INSERT INTO address (address.id, address, zipcode, city)
-        VALUES
+        INSERT INTO address (address, zipcode, city)
+        VALUES (?, ?, ?)
         ');
-        $query->execute();
-        $renter = $query->fetch();
-        $query->closeCursor();
-        return $renter;
+        $query->execute([$_POST['address'], $_POST['zipcode'], $_POST['city']]);
+        $query->closeCursor(); 
+
+        $query = $bdd->prepare('
+        INSERT INTO renters (address_id, name, website, phone, picture, description)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ');
+        $query->execute([$bdd->lastInsertId(), $_POST['name'], $_POST['website'], $_POST['phone'], $_POST['picture'], $_POST['description']]);
+        $query->closeCursor(); 
     }
 
     public function getRenter($renterId) {

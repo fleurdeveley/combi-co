@@ -59,12 +59,12 @@ if (isset($_GET['action'])) {
             }
         break;
 
-        // si chaque case sont bien remplis, ajoutes la méthode .... pour insérer un loueur
+        // si chaque case est bien rempli, j'ajoute la méthode .... pour insérer un loueur
         case 'addrenter' :
-            if(!empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['zipcode']) && !empty($_POST['city']) && !empty($_POST['phone']) && !empty($_POST['website'])&& !empty($_POST['picture']) && !empty($_POST['description'])){
+            if (isset($_POST) && !empty($_POST)){
                 $adminRenterController = new AdminRenterController();
                 $adminRenterController->insertRenter();
-            }elseif{
+            } else {
                 $adminRenterController = new AdminRenterController();
                 $adminRenterController->addRenter();
             }

@@ -53,15 +53,14 @@
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
                 </div>
             </div>
-            <a href="index.php?action=listrenters&id=<?= $renter['id'] ?>" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
+            <a href="index.php?action=listrenters" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
         </form>
     </div>
 
 </div>
-
 
 <?php $content = ob_get_clean(); ?>
 
