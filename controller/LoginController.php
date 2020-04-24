@@ -14,10 +14,10 @@ class LoginController {
             if($_POST['email'] == $user['email'] && $_POST['password'] == $user['password']) {
                 header('Location: index.php?action=listrenters');
                 exit;
-            }else{
+            } else {
                 require('view/frontend/loginView.php');
             }
-        }else {
+        } else {
             require('view/frontend/loginView.php');
         }
     }
