@@ -81,6 +81,16 @@ if (isset($_GET['action'])) {
             $adminRenterController->listRenters();  
         break;
 
+        case 'deleterenter' :
+            if (isset($_GET['id']) && $_GET['id'] > 0){
+                $adminRenterController = new AdminRenterController();
+                $adminRenterController->deleteRenter();
+            } else {
+                $adminRenterController = new AdminRenterController();
+                $adminRenterController->listRenters();
+            }
+        break;
+
         case 'readrenter' :
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $adminRenterController = new AdminRenterController();

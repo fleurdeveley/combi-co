@@ -62,6 +62,8 @@
 
 </div>
 
+<script type="text/javascript" src="public/js/addrenter.js"></script>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('view/frontend/template.php'); ?>

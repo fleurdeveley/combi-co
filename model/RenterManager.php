@@ -36,10 +36,30 @@ class RenterManager extends Manager {
         $query->closeCursor(); 
     }
 
+    public function deleteRenter($deleteRenterId) {
+        $bdd = $this->bddConnect();
+        $renter = $this->getRenter($deleteRenterId);
+        
+        $query = $bdd->prepare('
+        DELETE FROM renters
+        WHERE renters.id = ?
+        ');
+        $query->execute([$deleteRenterId]);
+        $query->closeCursor();
+
+        $query = $bdd->prepare('
+        DELETE FROM address 
+        WHERE address.id = ?
+        ');
+        $query->execute([$renter['address_id']]);
+        $query->closeCursor(); 
+
+    }
+
     public function getRenter($renterId) {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
-        SELECT renters.id, address, zipcode, city, name, website, phone, picture, description FROM renters
+        SELECT renters.id, address_id, address, zipcode, city, name, website, phone, picture, description FROM renters
         JOIN address ON renters.address_id = address.id
         WHERE renters.id = ?
         ');
