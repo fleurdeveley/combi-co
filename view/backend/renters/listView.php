@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                                            <button type="button" class="btn btn-success">Valider</button>
+                                            <a class="btn btn-success" href="index.php?action=deleterenter&id=<?= $renter['id'] ?>">Valider</a>
                                         </div>
                                     </div>
                                 </div>
