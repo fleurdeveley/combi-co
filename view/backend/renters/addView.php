@@ -7,47 +7,47 @@
 
     <div class="col-md-8 offset-md-3 my-3 text-justify">
 
-        <form method="post" action="index.php?action=addrenter" id="addrenter">
+        <form method="post" action="index.php?action=addrenter" id="crud">
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Nom</label>
-                    <input type="name" class="form-control" id="exampleFormControlInput1" name="name">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Adresse</label>
-                    <input type="address" class="form-control" id="exampleFormControlInput1" name="address">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="address">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Code postal</label>
-                    <input type="zipcode" class="form-control" id="exampleFormControlInput1" name="zipcode">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="zipcode">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Ville</label>
-                    <input type="city" class="form-control" id="exampleFormControlInput1" name="city">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="city">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Téléphone</label>
-                    <input type="phone" class="form-control" id="exampleFormControlInput1" name="phone">
+                    <input type="tel" class="form-control" id="exampleFormControlInput1" name="phone">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Site</label>
-                    <input type="website" class="form-control" id="exampleFormControlInput1" name="website">
+                    <input type="url" class="form-control" id="exampleFormControlInput1" name="website">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Logo</label>
-                    <input type="picture" class="form-control" id="exampleFormControlInput1" name="picture">
+                    <input type="url" class="form-control" id="exampleFormControlInput1" name="picture">
                 </div>
             </div>
             <div class="form-group">
