@@ -16,6 +16,7 @@
         <div><?= $renter['phone'] ?></div>
         <div><a href="<?= $renter['website'] ?>" target="_blank"><?= $renter['website'] ?> </a></div>
         <div><?= $renter['description'] ?></div>
+        <a href="index.php?action=renter&id=<?= $renter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
     </div>
 </section>
 
@@ -32,6 +33,7 @@
                     <h5><?= $model['model'] . ' ' . $model['nickname']; ?></h5>
                     <h6><?= $model['name']; ?></h6>
                     <div><?= $model['year_start'] . ' à ' . $model['year_end']; ?></div>
+                    <a href="index.php?action=model&id=<?= $model['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
                 </div>
             </div>
         </div>

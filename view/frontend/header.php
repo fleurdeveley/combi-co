@@ -1,4 +1,4 @@
-<header class="row bg-primary p-2">
+<header class="row bg-perso p-2">
     <div class="col-xs-12 offset-md-1 col-md-2 text-center">
         <img src="public/img/combi.png" class="img-fluid" alt="logo site">
     </div>

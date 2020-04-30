@@ -70,10 +70,12 @@ if (isset($_GET['action'])) {
         break;  
 
         case 'editrenter' :
-        // si chaque case sont bien remplis, modifies la méthode .... pour modifier un loueur
-        // sinon je renvoie la méthode editrenter
-            $adminRenterController = new AdminRenterController();
-            $adminRenterController->editRenter();
+            if (isset($_POST) && !empty($_POST)){
+                $adminRenterController = new AdminRenterController();
+                $adminRenterController->updateRenter();
+            } else {
+                $adminRenterController = new AdminRenterController();
+                $adminRenterController->editRenter();            }
         break;
 
         case 'listrenters' :
