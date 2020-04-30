@@ -9,8 +9,8 @@
 
     <?php foreach ($renters as $renter) : ?>
         <div class='col-sm-12 col-md-4'>
-            <div class="card mb-5 border-dark">
-                <div class=" card-header bg-primary text-white">
+            <div class="card border-dark mb-5 p-1">
+                <div class=" card-header bg-perso">
                     <h5><?= $renter['name'] ?></h5>
                 </div>
                 <img src="<?= $renter['picture'] ?>" class="card-img-top" alt="...">

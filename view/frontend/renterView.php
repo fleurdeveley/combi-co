@@ -5,7 +5,7 @@
 <div class='row my-4 p-2'>
     <div class='col-sm-12 col-md-8 offset-md-2'>
         <div class="card box-shadows-6px-gray">
-            <div class=" card-header bg-primary text-white">
+            <div class=" card-header bg-perso">
                 <h5><?= $renter['name'] ?></h5>
             </div>
             <img src="<?= $renter['picture'] ?>" class="card-img-top" alt="...">

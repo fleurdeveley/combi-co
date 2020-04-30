@@ -62,6 +62,12 @@ $(function () {
             }
         });
 
+        $(':textarea').each(function(){
+            if ($(this).val().length == 0){
+                $(this).removeClass('is-valid').addClass('is-invalid');
+            }
+        });
+
         checkZipcode ();
         checkPhone ();
         checkWebsite();

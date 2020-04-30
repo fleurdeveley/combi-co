@@ -1,11 +1,11 @@
 body{
-    font-family: 'Roboto', sans-serif!important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 section{
     box-shadow: 6px 6px 6px gray;
 }
 
-.bg-primary {
-    background-color: gray!important;
+.bg-perso {
+    background-color: #a1d2f0 !important;
 }

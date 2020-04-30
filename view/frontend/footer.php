@@ -1,4 +1,4 @@
-<footer class="row bg-primary p-2">
+<footer class="row bg-perso p-2">
     <div class="col-xs-12 col-lg-4 text-center">
         <div class="mb-1">Inscription newsletter</div>
         <form class="form-inline">

@@ -36,6 +36,27 @@ class RenterManager extends Manager {
         $query->closeCursor(); 
     }
 
+    public function updateRenter($updateRenterId) {
+        $bdd = $this->bddConnect();
+        $renter = $this->getRenter($updateRenterId);
+
+        $query = $bdd->prepare('
+        UPDATE address 
+        SET address, zipcode, city
+        WHERE address.id = ?
+        ');
+        $query->execute([$updateRenterId]);
+        $query->closeCursor(); 
+
+        $query = $bdd->prepare('
+        UPDATE renters 
+        SET address_id, name, website, phone, picture, description
+        WHERE renters.id = address.id
+        ');
+        $query->execute([$updateRenterId]);
+        $query->closeCursor(); 
+    }
+
     public function deleteRenter($deleteRenterId) {
         $bdd = $this->bddConnect();
         $renter = $this->getRenter($deleteRenterId);
@@ -53,7 +74,6 @@ class RenterManager extends Manager {
         ');
         $query->execute([$renter['address_id']]);
         $query->closeCursor(); 
-
     }
 
     public function getRenter($renterId) {
