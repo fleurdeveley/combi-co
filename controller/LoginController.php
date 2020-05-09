@@ -12,6 +12,8 @@ class LoginController {
             $userManager = new UserManager();
             $user = $userManager->getUser($_POST['email']);
             if($_POST['email'] == $user['email'] && $_POST['password'] == $user['password']) {
+                session_start();
+                $_SESSION['login'] = $user['email'];
                 header('Location: index.php?action=listrenters');
                 exit;
             } else {
@@ -24,5 +26,13 @@ class LoginController {
     
     public function login() {
         require('view/frontend/loginView.php');
+    }
+
+    public function deconnexion() {
+        session_start();
+        unset($_SESSION);
+        session_destroy();
+        header('Location: index.php?action=login');
+        exit;
     }
 }

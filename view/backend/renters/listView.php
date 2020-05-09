@@ -3,8 +3,7 @@
 <?php ob_start(); ?>
 
 <div class='row my-3'>
-    <a href="index.php?action=addrenter" class="btn btn-success mr-3">Ajouter un loueur</a> <a href="index.php?action=home" class="btn btn-danger">Déconnexion</a>
-
+    <a href="index.php?action=addrenter" class="btn btn-success mr-3">Ajouter un loueur</a> <a href="index.php?action=deconnexion" class="btn btn-danger">Déconnexion</a>
 
     <div class="table-responsive">
         <table class="table table-hover table-bodered">
@@ -25,7 +24,8 @@
                         <td><a href="index.php?action=editrenter&id=<?= $renter['id'] ?>" class="btn btn-warning">Modifier</a></td>
                         <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-<?= $renter['id'] ?>">Supprimer</button>
-                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" 
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">

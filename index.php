@@ -29,6 +29,11 @@ if (isset($_GET['action'])) {
             }
         break;
 
+        case 'deconnexion' :
+            $loginController = new LoginController();
+            $loginController->deconnexion();
+    break;
+
         case 'models' :
             $modelController = new ModelController();
             $modelController->models();
