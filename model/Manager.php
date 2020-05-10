@@ -2,8 +2,10 @@
 
 namespace Combis\Model;
 
-class Manager {
-    protected function bddConnect() {
+class Manager
+{
+    protected function bddConnect()
+    {
         require('config.php');
         try {
             $bdd = new \PDO("mysql:host=" . $host . ";dbname=" . $dbName, $userBdd, $passBdd, $optionBdd);

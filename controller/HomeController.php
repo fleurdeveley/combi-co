@@ -8,8 +8,10 @@ use \Combis\Model\RenterManager;
 require_once('model/ModelManager.php');
 require_once('model/RenterManager.php');
 
-class HomeController {
-    function home() {
+class HomeController
+{
+    function home()
+    {
         $renterManager = new RenterManager();
         $renter = $renterManager->getRandRenter();
         $modelManager = new ModelManager();

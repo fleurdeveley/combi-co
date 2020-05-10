@@ -1,8 +1,8 @@
 <footer class="row bg-perso p-2">
-    <div class="col-xs-12 col-lg-4 text-center">
-        <div class="mb-1">Inscription newsletter</div>
-        <form class="form-inline">
-            <input class="form-control" type="search" placeholder="Email" aria-label="Search">
+    <div class="col-xs-12 col-lg-4">
+        <div class="mb-1">Inscription à la newsletter</div>
+        <form class="form-inline" method="post" action="index.php?action=newsletter" id="newsletter">
+            <input class="form-control" type="email" name="email" id="newsletter" placeholder="Email" aria-label="Search">
             <button class="btn btn-outline-dark" type="submit"><i class="far fa-envelope fa-lg"></i></button>
         </form>
     </div>

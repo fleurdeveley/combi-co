@@ -4,8 +4,10 @@ namespace Combis\Model;
 
 require_once("model/Manager.php");
 
-class ModelManager extends Manager {
-    public function getModel($modelId) {
+class ModelManager extends Manager
+{
+    public function getModel($modelId)
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
@@ -18,7 +20,8 @@ class ModelManager extends Manager {
         return $model;
     }
 
-    public function getModels() {
+    public function getModels()
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
             SELECT models.id, model, nickname, year_start, year_end, description, picture, name FROM models
@@ -31,7 +34,8 @@ class ModelManager extends Manager {
         return $models;
     }
 
-    public function getModelRenters($modelId) {
+    public function getModelRenters($modelId)
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT renters.id, name, website, address, zipcode, city FROM renters_models
