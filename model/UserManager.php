@@ -4,8 +4,10 @@ namespace Combis\Model;
 
 require_once("model/Manager.php");
 
-class UserManager extends Manager {
-    public function getUser($userId) {
+class UserManager extends Manager
+{
+    public function getUser($userId)
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT * FROM users

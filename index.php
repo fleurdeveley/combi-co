@@ -5,12 +5,14 @@ use \Combis\Controller\HomeController;
 use \Combis\Controller\LoginController;
 use \Combis\Controller\ModelController;
 use \Combis\Controller\RenterController;
+use \Combis\Controller\NewsletterController;
 
 require_once('controller/AdminRenterController.php');
 require_once('controller/HomeController.php');
 require_once('controller/LoginController.php');
 require_once('controller/ModelController.php');
 require_once('controller/RenterController.php');
+require_once('controller/NewsletterController.php');
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']){
@@ -29,10 +31,17 @@ if (isset($_GET['action'])) {
             }
         break;
 
+        case 'newsletter' :
+            if (!empty($_POST['email'])) {
+                $newsletterController = new NewsletterController();
+                $newsletterController->newsletter();
+            } 
+        break;
+
         case 'deconnexion' :
             $loginController = new LoginController();
             $loginController->deconnexion();
-    break;
+        break;
 
         case 'models' :
             $modelController = new ModelController();

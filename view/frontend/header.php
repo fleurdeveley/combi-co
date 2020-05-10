@@ -10,16 +10,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=home">Accueil<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-dark" href="index.php?action=home">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=models">Modèles</a>
+                        <a class="nav-link text-dark" href="index.php?action=models">Modèles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=renters">Loueurs</a>
+                        <a class="nav-link text-dark" href="index.php?action=renters">Loueurs</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=login"><i class="fas fa-user-lock"></i></a>
+                    <a class="nav-link text-dark" href="index.php?action=login"><i class="fas fa-user-lock"></i></a>
                     </li>
                 </ul>
             </div>

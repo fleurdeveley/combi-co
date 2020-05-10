@@ -4,8 +4,10 @@ namespace Combis\Model;
 
 require_once("model/Manager.php");
 
-class RenterManager extends Manager {
-    public function getRandRenter() {
+class RenterManager extends Manager
+{
+    public function getRandRenter()
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT * FROM renters
@@ -18,7 +20,8 @@ class RenterManager extends Manager {
         return $renter;
     }
 
-    public function insertRenter() {
+    public function insertRenter()
+    {
         $bdd = $this->bddConnect();
 
         $query = $bdd->prepare('
@@ -26,17 +29,18 @@ class RenterManager extends Manager {
         VALUES (?, ?, ?)
         ');
         $query->execute([$_POST['address'], $_POST['zipcode'], $_POST['city']]);
-        $query->closeCursor(); 
+        $query->closeCursor();
 
         $query = $bdd->prepare('
         INSERT INTO renters (address_id, name, website, phone, picture, description)
         VALUES (?, ?, ?, ?, ?, ?)
         ');
         $query->execute([$bdd->lastInsertId(), $_POST['name'], $_POST['website'], $_POST['phone'], $_POST['picture'], $_POST['description']]);
-        $query->closeCursor(); 
+        $query->closeCursor();
     }
 
-    public function updateRenter($updateRenterId) {
+    public function updateRenter($updateRenterId)
+    {
         $bdd = $this->bddConnect();
         $renter = $this->getRenter($updateRenterId);
 
@@ -46,7 +50,7 @@ class RenterManager extends Manager {
         WHERE address.id = ?
         ');
         $query->execute([$updateRenterId]);
-        $query->closeCursor(); 
+        $query->closeCursor();
 
         $query = $bdd->prepare('
         UPDATE renters 
@@ -54,13 +58,14 @@ class RenterManager extends Manager {
         WHERE renters.id = address.id
         ');
         $query->execute([$updateRenterId]);
-        $query->closeCursor(); 
+        $query->closeCursor();
     }
 
-    public function deleteRenter($deleteRenterId) {
+    public function deleteRenter($deleteRenterId)
+    {
         $bdd = $this->bddConnect();
         $renter = $this->getRenter($deleteRenterId);
-        
+
         $query = $bdd->prepare('
         DELETE FROM renters
         WHERE renters.id = ?
@@ -73,10 +78,11 @@ class RenterManager extends Manager {
         WHERE address.id = ?
         ');
         $query->execute([$renter['address_id']]);
-        $query->closeCursor(); 
+        $query->closeCursor();
     }
 
-    public function getRenter($renterId) {
+    public function getRenter($renterId)
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT renters.id, address_id, address, zipcode, city, name, website, phone, picture, description FROM renters
@@ -89,7 +95,8 @@ class RenterManager extends Manager {
         return $renter;
     }
 
-    public function getRenters() {
+    public function getRenters()
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT renters.id, address, zipcode, city, name, website, phone, picture, description FROM renters
@@ -101,7 +108,8 @@ class RenterManager extends Manager {
         return $renters;
     }
 
-    public function getRenterModels($renterId) {
+    public function getRenterModels($renterId)
+    {
         $bdd = $this->bddConnect();
         $query = $bdd->prepare('
         SELECT model, nickname, name FROM renters_models
