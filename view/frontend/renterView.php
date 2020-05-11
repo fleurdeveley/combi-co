@@ -1,4 +1,5 @@
 <?php $title = 'Renter'; ?>
+<?php $metadescription = 'Dans les parages, il y a certainement un loueur de combi, renseignez-vous'; ?>
 
 <?php ob_start(); ?>
 

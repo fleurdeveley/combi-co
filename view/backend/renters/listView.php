@@ -1,4 +1,5 @@
 <?php $title = 'List renters'; ?>
+<?php $robots = '<meta name="robots" content="NOINDEX, NOFOLLOW">'; ?>
 
 <?php ob_start(); ?>
 

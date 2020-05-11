@@ -1,4 +1,5 @@
 <?php $title = 'Renters'; ?>
+<?php $metadescription = 'En France, il y a des loueurs de combi'; ?>
 
 <?php ob_start(); ?>
 

@@ -1,4 +1,6 @@
 <?php $title = 'Accueil'; ?>
+<?php $metadescription = 'suite au confinement, beaucoup de français souhaitent partir, prendre un bol d\'air 
+en campagne ou au bord de mer ou en mode citadin, le fameux combi permet de circuler en toute liberté.'; ?>
 
 <?php ob_start(); ?>
 

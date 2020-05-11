@@ -118,8 +118,8 @@ if (isset($_GET['action'])) {
         break;
 
         default :
-            $homeController = new HomeController();
-            $homeController->home();
+            // $homeController = new HomeController();
+            // $homeController->home();
     }
 
 } else {

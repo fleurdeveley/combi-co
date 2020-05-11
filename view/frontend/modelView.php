@@ -1,4 +1,5 @@
 <?php $title = 'Model'; ?>
+<?php $metadescription = 'Prenez en main votre combi : que l\'aventure commence'; ?>
 
 <?php ob_start(); ?>
 <div class='row my-4 p-2'>
