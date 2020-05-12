@@ -24,6 +24,8 @@
                 </ul>
             </div>
         </nav>
-        <h1> Combis & Roads</h1>
+        <div class="col-xs-12 offset-md-2 col-md-5 text-center">
+            <h1> Combis & Roads</h1>
+        </div>
     </div>
 </header>
