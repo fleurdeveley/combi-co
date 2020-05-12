@@ -1,4 +1,5 @@
 <?php $title = 'Newsletter'; ?>
+<?php $metadescription = 'Inscription a la newsletter : l\'indispensable pour etre au courant des evenements'; ?>
 
 <?php ob_start(); ?>
 

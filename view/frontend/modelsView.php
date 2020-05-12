@@ -1,4 +1,6 @@
-<?php $title = 'Model'; ?>
+<?php $title = 'Models'; ?>
+<?php $metadescription = 'Prenez le temps de découvrir les différents combis : vous allez être surpris'; ?>
+
 
 <?php ob_start(); ?>
 

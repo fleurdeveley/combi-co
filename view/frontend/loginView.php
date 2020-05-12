@@ -1,10 +1,12 @@
 <?php $title = 'Admin'; ?>
+<?php $metadescription = ''; ?>
+<?php $robots = '<meta name="robots" content="NOINDEX, NOFOLLOW">'; ?>
 
 <?php ob_start(); ?>
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <div class="card border-dark my-3">
+        <div class="card border-dark my-3 p-1">
             <div class="card-header bg-perso text-center ">
                 <h5>Connexion à l'administrateur</h5>
             </div>
