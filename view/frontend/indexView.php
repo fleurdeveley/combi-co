@@ -18,13 +18,13 @@ en campagne ou au bord de mer ou en mode citadin, le fameux combi permet de circ
         <div><?= $renter['phone'] ?></div>
         <div><a href="<?= $renter['website'] ?>" target="_blank"><?= $renter['website'] ?> </a></div>
         <div><?= $renter['description'] ?></div>
-        <a href="index.php?action=renter&id=<?= $renter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
+        <a href="renter-<?= $renter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
     </div>
 </section>
 
 <section class="row my-4 p-2">
     <div class="col-xs-12 col-md-12">
-        <h3>Zoom sur les combis...</h3>
+        <h3>Zoom sur les combis volkswagen...</h3>
     </div>
 
     <?php foreach ($models as $model) : ?>
@@ -35,7 +35,7 @@ en campagne ou au bord de mer ou en mode citadin, le fameux combi permet de circ
                     <h5><?= $model['model'] . ' ' . $model['nickname']; ?></h5>
                     <h6><?= $model['name']; ?></h6>
                     <div><?= $model['year_start'] . ' à ' . $model['year_end']; ?></div>
-                    <a href="index.php?action=model&id=<?= $model['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
+                    <a href="model-<?= $model['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
                 </div>
             </div>
         </div>

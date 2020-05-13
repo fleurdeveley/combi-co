@@ -15,7 +15,7 @@ class AdminRenterController
             if (filter_var($_POST['picture'], FILTER_VALIDATE_URL) && filter_var($_POST['website'], FILTER_VALIDATE_URL) && preg_match("/^0[1-9]\d{8}$/", $_POST['phone']) && preg_match("/^[\d]{5}$/", $_POST['zipcode'])) {
                 $renterManager = new RenterManager();
                 $renterManager->insertRenter();
-                header('Location: index.php?action=listrenters');
+                header('Location: listrenters');
                 exit;
             } else {
                 require('view/backend/renters/addView.php');
@@ -46,7 +46,7 @@ class AdminRenterController
             if (filter_var($_POST['picture'], FILTER_VALIDATE_URL) && filter_var($_POST['website'], FILTER_VALIDATE_URL) && preg_match("/^0[1-9]\d{8}$/", $_POST['phone']) && preg_match("/^[\d]{5}$/", $_POST['zipcode'])) {
                 $renterManager = new RenterManager();
                 $renterManager->updateRenter($_GET['id']);
-                header('Location: index.php?action=listrenters');
+                header('Location: listrenters');
                 exit;
             } else {
                 require('view/backend/renters/editView.php');
@@ -69,7 +69,7 @@ class AdminRenterController
         $this->private();
         $renterManager = new RenterManager();
         $renterManager->deleteRenter($_GET['id']);
-        header('Location: index.php?action=listrenters');
+        header('Location: listrenters');
         exit;
     }
 
@@ -85,7 +85,7 @@ class AdminRenterController
     {
         session_start();
         if (!isset($_SESSION['login'])) {
-            header('Location: index.php?action=login');
+            header('Location: login');
             exit;
         }
     }

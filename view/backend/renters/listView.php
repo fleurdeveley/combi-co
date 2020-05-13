@@ -4,7 +4,7 @@
 <?php ob_start(); ?>
 
 <div class='row my-3'>
-    <a href="index.php?action=addrenter" class="btn btn-success mr-3">Ajouter un loueur</a> <a href="index.php?action=deconnexion" class="btn btn-danger">Déconnexion</a>
+    <a href="addrenter" class="btn btn-success mr-3">Ajouter un loueur</a> <a href="deconnexion" class="btn btn-danger">Déconnexion</a>
 
     <div class="table-responsive">
         <table class="table table-hover table-bodered">
@@ -21,8 +21,8 @@
                         <td><?= $renter['name'] ?></td>
                         <td><?= $renter['zipcode'] ?></td>
                         <td><?= $renter['city'] ?></td>
-                        <td><a href="index.php?action=readrenter&id=<?= $renter['id'] ?>" class="btn btn-light">Afficher</a></td>
-                        <td><a href="index.php?action=editrenter&id=<?= $renter['id'] ?>" class="btn btn-warning">Modifier</a></td>
+                        <td><a href="readrenter-<?= $renter['id'] ?>" class="btn btn-light">Afficher</a></td>
+                        <td><a href="editrenter-<?= $renter['id'] ?>" class="btn btn-warning">Modifier</a></td>
                         <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-<?= $renter['id'] ?>">Supprimer</button>
                             <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" 
@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                                            <a class="btn btn-success" href="index.php?action=deleterenter&id=<?= $renter['id'] ?>">Valider</a>
+                                            <a class="btn btn-success" href="deleterenter-<?= $renter['id'] ?>">Valider</a>
                                         </div>
                                     </div>
                                 </div>

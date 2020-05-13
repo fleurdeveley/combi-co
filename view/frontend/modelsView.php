@@ -17,7 +17,7 @@
                 <img src="<?= $model['picture'] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-text text-center"><?= $model['year_start'] . ' à ' . $model['year_end'] ?></p>
-                    <a href="index.php?action=model&id=<?= $model['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
+                    <a href="model-<?= $model['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
                 </div>
             </div>
         </div>

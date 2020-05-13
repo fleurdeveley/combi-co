@@ -16,7 +16,7 @@ class LoginController
             if ($_POST['email'] == $user['email'] && $_POST['password'] == $user['password']) {
                 session_start();
                 $_SESSION['login'] = $user['email'];
-                header('Location: index.php?action=listrenters');
+                header('Location: listrenters');
                 exit;
             } else {
                 require('view/frontend/loginView.php');
@@ -36,7 +36,7 @@ class LoginController
         session_start();
         unset($_SESSION);
         session_destroy();
-        header('Location: index.php?action=login');
+        header('Location: login');
         exit;
     }
 }

@@ -21,7 +21,7 @@ class NewsletterController
             }
             require('view/frontend/newsletterView.php');
         } else {
-            header('Location: index.php?action=home');
+            header('Location: home');
             exit;
         }
     }
