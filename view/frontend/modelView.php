@@ -6,7 +6,7 @@
     <div class='col-12-md col-md-8'>
         <div class="card box-shadows-6px-gray">
             <div class=" card-header bg-perso">
-                <?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?>
+                <h3><?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?></h3>
             </div>
             <img src="<?= $model['picture'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
@@ -28,7 +28,7 @@
                         <p class="card-text text-center"><?= $modelRenter['address'] ?></p>
                         <p class="card-text text-center"><?= $modelRenter['zipcode'] . ' ' . $modelRenter['city'] ?></p>
                         <p class="card-text text-center"> <a href="<?= $modelRenter['website'] ?>" target="_blank"><?= $modelRenter['website'] ?> </a></p>
-                        <a href="index.php?action=renter&id=<?= $modelRenter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
+                        <a href="renter-<?= $modelRenter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
                     </div>
                 </div>
             </div>

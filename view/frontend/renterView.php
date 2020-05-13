@@ -7,7 +7,7 @@
     <div class='col-sm-12 col-md-8 offset-md-2'>
         <div class="card box-shadows-6px-gray">
             <div class=" card-header bg-perso">
-                <h5><?= $renter['name'] ?></h5>
+                <h3><?= $renter['name'] ?></h3>
             </div>
             <img src="<?= $renter['picture'] ?>" class="card-img-top" alt="...">
             <div class="card-body">

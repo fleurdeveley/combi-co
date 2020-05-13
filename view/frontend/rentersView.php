@@ -19,7 +19,7 @@
                     <p class="card-text text-center">
                         <?= $renter['address'] ?></p>
                     <p class="card-text text-center"><?= $renter['zipcode'] . ' ' . $renter['city'] ?></p>
-                    <a href="index.php?action=renter&id=<?= $renter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
+                    <a href="renter-<?= $renter['id'] ?>" class="btn btn-secondary float-right">En savoir +</a>
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@
 
     <div class="col-md-8 offset-md-3 my-3 text-justify">
 
-        <form method="post" action="index.php?action=addrenter" id="crud">
+        <form method="post" action="addrenter" id="crud">
             <div class="form-group">
                 <div class="col-sm-8">
                     <label for="exampleFormControlInput1">Nom</label>
@@ -57,7 +57,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
                 </div>
             </div>
-            <a href="index.php?action=listrenters" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
+            <a href="listrenters" class="btn btn-danger mr-3">annuler</a> <button type="submit" class="btn btn-success">enregistrer</button>
         </form>
     </div>
 

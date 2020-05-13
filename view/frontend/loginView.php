@@ -8,10 +8,10 @@
     <div class="col-md-6 offset-md-3">
         <div class="card border-dark my-3 p-1">
             <div class="card-header bg-perso text-center ">
-                <h5>Connexion à l'administrateur</h5>
+                <h3>Connexion à l'administrateur</h3>
             </div>
             <div class="card-body">
-                <form method="post" action="index.php?action=login" id="login">
+                <form method="post" action="login" id="login">
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-secondary text-white"><i class="fas fa-at"></i></div>
