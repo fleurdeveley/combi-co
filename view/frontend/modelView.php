@@ -20,7 +20,7 @@
 
         <?php foreach ($modelRenters as $modelRenter) : ?>
             <div class='col-12 my-3'>
-                <div class="card border-dark p-1">
+                <div class="card">
                     <div class=" card-header bg-perso">
                         <h5><?= $modelRenter['name'] ?></h5>
                     </div>

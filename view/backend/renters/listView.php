@@ -9,10 +9,10 @@
     <div class="table-responsive">
         <table class="table table-hover table-bodered">
             <thead>
-                <th>Nom</th>
-                <th>Code Postal</th>
-                <th>Ville</th>
-                <th colspan=3>Edition</th>
+                <th class="table-active">Nom</th>
+                <th class="table-active">Code Postal</th>
+                <th class="table-active">Ville</th>
+                <th class="table-active" colspan=3>Edition</th>
             </thead>
 
             <tbody>
@@ -25,8 +25,7 @@
                         <td><a href="editrenter-<?= $renter['id'] ?>" class="btn btn-warning">Modifier</a></td>
                         <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-<?= $renter['id'] ?>">Supprimer</button>
-                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" 
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -45,15 +44,13 @@
                                     </div>
                                 </div>
                             </div>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+
+        </table>
     </div>
-    </td>
-    </tr>
-
-<?php endforeach ?>
-</tbody>
-
-</table>
-</div>
 </div>
 
 <?php $content = ob_get_clean(); ?>
