@@ -33,7 +33,7 @@
                     <tbody>
                         <?php foreach ($forecasts as $forecast) : ?>
                             <tr>
-                                <td><?= (new \DateTime($forecast->datetime))->format('j/m/Y'); ?></td>
+                                <td><?= (new \DateTime($forecast->datetime))->format('d/m/Y'); ?></td>
                                 <td><?= $forecast->tmin.'°C / '. $forecast->tmax.'°C' ?></td>
                                 <td><?= $forecast->probarain.'%' ?></td>
                                 <td><?= $forecast->probawind70.'%' ?></td>
