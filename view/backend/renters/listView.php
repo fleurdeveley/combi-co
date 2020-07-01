@@ -25,7 +25,8 @@
                         <td><a href="editrenter-<?= $renter['id'] ?>" class="btn btn-warning">Modifier</a></td>
                         <td>
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-<?= $renter['id'] ?>">Supprimer</button>
-                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="modal-<?= $renter['id'] ?>" tabindex="-1" role="dialog" 
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">

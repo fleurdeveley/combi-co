@@ -13,12 +13,13 @@ class Meteo
     public function insee($renterZipcode, $renterCity)
     {
         $insee = '';
-        $data = file_get_contents('https://api.meteo-concept.com/api/location/cities?token=' . $this->token . '&search=' . urlencode($renterCity));
+        $data = file_get_contents('https://api.meteo-concept.com/api/location/cities?token=' . $this->token 
+        . '&search=' . urlencode($renterCity));
 
         if ($data) {
             $cities = json_decode($data)->cities;
             foreach ($cities as $city)
-                if ($city->zipcode == $renterZipcode) {
+                if ($city->cp == $renterZipcode) {
                     $insee = $city->insee;
                 }
         }

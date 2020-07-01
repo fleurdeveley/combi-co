@@ -2,8 +2,9 @@
 <?php $metadescription = 'Prenez en main votre combi : que l\'aventure commence'; ?>
 
 <?php ob_start(); ?>
+
 <div class='row my-4 p-2'>
-    <div class='col-12-md col-md-8'>
+    <div class='col-sm-12 col-md-8'>
         <div class="card box-shadows-6px-gray">
             <div class=" card-header bg-perso">
                 <h3><?= $model['model'] . ' ' . $model['nickname'] . ' ' . $model['name'] ?></h3>
@@ -15,6 +16,7 @@
             </div>
         </div>
     </div>
+    
     <div class="col-sm-12 col-md-4">
         <h5>Loueur(s) ayant ce modèle :</h5>
 
